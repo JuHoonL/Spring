@@ -1,0 +1,14 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<html>
+<head>
+	<title>나의 고향</title>
+</head>
+<body>
+<h1>
+	반갑습니다. 
+</h1>
+
+<P>  나의 첫번째 스프링 프로젝트 </P>
+</body>
+</html>
