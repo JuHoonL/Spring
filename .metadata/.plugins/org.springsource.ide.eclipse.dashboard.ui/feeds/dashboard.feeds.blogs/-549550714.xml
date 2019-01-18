@@ -5,7 +5,19 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-01-17T00:00:00Z</updated>
+  <updated>2019-01-18T00:00:00Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: an Interview with Google Developer Advocate Ray Tsang</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/01/18/a-bootiful-podcast-an-interview-with-google-developer-advocate-ray-tsang" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-01-17:3544</id>
+    <updated>2019-01-18T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;In this week&amp;rsquo;s installment I talk to Google Cloud developer advocate, fellow Java Champion and prolific speaker and open source contributor in the Kubernetes and Spring communities, &lt;a href="http://twitter.com/saturnism"&gt;Ray Tsang&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Listen to the Podcast on &lt;a href="https://soundcloud.com/a-bootiful-podcast/google-developer-advocate-ray-tsang"&gt;SoundCloud&lt;/a&gt; or on iTunes (search &amp;ldquo;A Bootiful Podcast&amp;rdquo;)&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Bootiful Azure: Object Storage Service (5/6)</title>
     <link rel="alternate" href="https://spring.io/blog/2019/01/17/bootiful-azure-object-storage-service-5-6" />
@@ -491,12 +503,12 @@ class ServiceBusProducer implements Ordered {&#xD;
   <entry>
     <title>Spring Security 5.1.3, 5.0.11, 4.2.11 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/01/11/spring-security-5-1-3-5-0-11-4-2-11-released" />
-    <category term="engineering" label="Engineering" />
+    <category term="releases" label="Releases" />
     <author>
       <name>Josh Cummings</name>
     </author>
     <id>tag:spring.io,2019-01-11:3529</id>
-    <updated>2019-01-11T15:52:05Z</updated>
+    <updated>2019-01-11T15:52:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;On behalf of the community I am pleased to announce the release of Spring Security 5.1.3 (&lt;a href="https://github.com/spring-projects/spring-security/issues?q=is%3Aclosed+milestone%3A5.1.3+sort%3Aupdated-desc"&gt;changelog&lt;/a&gt;), 5.0.11 (&lt;a href="https://github.com/spring-projects/spring-security/issues?q=is%3Aclosed+milestone%3A5.0.11+sort%3Aupdated-desc"&gt;changelog&lt;/a&gt;), and 4.2.11 (&lt;a href="https://github.com/spring-projects/spring-security/issues?q=is%3Aclosed+milestone%3A4.2.11+sort%3Aupdated-desc"&gt;changelog&lt;/a&gt;). This series of releases provides a round of bug fixes and users are encouraged to update to the latest patch release.&lt;/p&gt;
 &lt;/div&gt;
@@ -1009,57 +1021,5 @@ open fun transform(): (String) -&amp;gt; String {&#xD;
   &lt;li&gt;&lt;a href="https://github.com/RakeshBhat/rbsample-sprng-camel-mongo"&gt;Spring Boot-enabled Apache Camel integration with Rabbitmq and MongoDB 3&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;By the way I recently did an eight part &lt;a href="https://spring.io/blog/2018/08/20/bootiful-gcp-getting-started-with-spring-cloud-for-google-cloud-platform-1-8"&gt;series introducing Spring for Google Cloud&lt;/a&gt;. You might want to check that series out, too.&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing General Availability of Spring Cloud Stream - Fishtown.RELEASE (2.1.0.RELEASE)</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/08/announcing-general-availability-of-spring-cloud-stream-fishtown-release-2-1-0-release" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Oleg Zhurakousky</name>
-    </author>
-    <id>tag:spring.io,2019-01-08:3523</id>
-    <updated>2019-01-08T14:39:00Z</updated>
-    <content type="html">&lt;p&gt;After an exciting journey, we are pleased to announce the General Availability release of the &lt;a href="https://github.com/spring-cloud/spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt; Fishtown release train - Fishtown.RELEASE/2.1.0.RELEASE.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
-    &amp;lt;dependencies&amp;gt;&#xD;
-        &amp;lt;dependency&amp;gt;&#xD;
-            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-            &amp;lt;artifactId&amp;gt;spring-cloud-stream-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;Fishtown.RELEASE&amp;lt;/version&amp;gt;&#xD;
-            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
-            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
-        &amp;lt;/dependency&amp;gt;&#xD;
-    &amp;lt;/dependencies&amp;gt;&#xD;
-&amp;lt;/dependencyManagement&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Spring Cloud Stream Fishtown (2.1.0.RELEASE) is available for use in &lt;a href="https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-stream/2.1.0.RELEASE/"&gt;Maven Central&lt;/a&gt; and the &lt;a href="http://repo.spring.io/libs-release/org/springframework/cloud/spring-cloud-stream/2.1.0.RELEASE/"&gt;Spring Repo&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;&lt;h1&gt;&lt;a href="#this-release-encompasses-the-following" class="anchor" name="this-release-encompasses-the-following"&gt;&lt;/a&gt;This release encompasses the following:&lt;/h1&gt;&lt;h3&gt;&lt;a href="#notable-dependency-upgrades" class="anchor" name="notable-dependency-upgrades"&gt;&lt;/a&gt;Notable Dependency Upgrades&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Boot 2.1.x&lt;/li&gt;
-  &lt;li&gt;Reactor Californium.RELEASE&lt;/li&gt;
-  &lt;li&gt;Spring Cloud Function 2.0.0.RELEASE&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;&lt;a href="#core" class="anchor" name="core"&gt;&lt;/a&gt;Core&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for &lt;a href="https://cloud.spring.io/spring-cloud-function/"&gt;Spring Cloud Function&lt;/a&gt; programming model (see &lt;a href="https://spring.io/blog/2018/08/28/spring-cloud-stream-fishtown-m2-2-1-0-m2-release-announcement"&gt;M2 release announcement&lt;/a&gt; for more details)&lt;/li&gt;
-  &lt;li&gt;Support for Message Listener container customization by simply registering implementation of &lt;code&gt;ListenerContainerCustomizer&lt;/code&gt; bean.&lt;/li&gt;
-  &lt;li&gt;Binding properties precedence support (see &lt;a href="https://spring.io/blog/2018/06/28/spring-cloud-stream-fishtown-m1-2-1-0-m1-release-announcement"&gt;M1 release announcement&lt;/a&gt; for more details)&lt;/li&gt;
-  &lt;li&gt;Support for &lt;em&gt;output&lt;/em&gt; binding actuator endpoints was added as well.&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;&lt;a href="#rabbit-binder" class="anchor" name="rabbit-binder"&gt;&lt;/a&gt;Rabbit Binder&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Exposed support for setting queue length as and overflow policy&lt;/li&gt;
-  &lt;li&gt;Multiplex support&lt;/li&gt;
-  &lt;li&gt;Support for Consumer Tags&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;&lt;a href="#kafka-binder" class="anchor" name="kafka-binder"&gt;&lt;/a&gt;Kafka Binder&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Wild cards are now supported in kafka topic names in the binder [kafka binder]&lt;/li&gt;
-  &lt;li&gt;New annotation &lt;code&gt;KafkaStreamsStateStore&lt;/code&gt; for creating state stores in lower level processor API in kafka streams [kafka streams binder]&lt;/li&gt;
-  &lt;li&gt;Removing the creation of unnecessary repartition topics in the kafka streams binder&lt;/li&gt;
-  &lt;li&gt;Consuming from multiple topics in kafka streams binder&lt;/li&gt;
-  &lt;li&gt;Improvements in in interactive query support in kafka streams binder - Multiple consumers and querying across them are now supported.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;QueryableStoreRegistry&lt;/code&gt; is deprecated and a new API is provided called &lt;code&gt;InteractiveQueryService&lt;/code&gt;. In addition to provide ability to query state stores, this API also gives information about the host where the consumer is running.&lt;/li&gt;
-  &lt;li&gt;Multiplex support&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Once again huge thanks to all the community contributors!!! &lt;/p&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-stream/"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Gitter&lt;/a&gt;. &lt;/p&gt;</content>
   </entry>
 </feed>
