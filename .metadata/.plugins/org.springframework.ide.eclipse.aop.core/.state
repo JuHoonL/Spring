@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="spMVC003"/>
-<aop-project name="spMVC_Memo"/>
+<aop-project name="spMVC_memo01"/>
 </aop-reference-model>

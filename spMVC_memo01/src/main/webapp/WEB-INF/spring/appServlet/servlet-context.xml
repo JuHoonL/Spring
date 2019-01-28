@@ -21,7 +21,17 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.biz.memo01" />
+	<!-- 
+	spring이 시작되면서 @Controller Anotation이 설정된 클래스들을 찾아서
+	자동으로 객체로 생성하여 사용할 준비를 하라는 선언
+	
+	그런데 초기값이 com.biz.memo01로 설정이 되어 있고 spring이 시작되면서
+	수 많은 클래스들을 검색하게 된다.
+	
+	그래서 spring이 scan하는 package를 controller로 제한하여 조금이라도 
+	시작이 빨리 되도록 선언을 변경 
+	-->
+	<context:component-scan base-package="com.biz.memo01.controller" />
 	
 	
 	

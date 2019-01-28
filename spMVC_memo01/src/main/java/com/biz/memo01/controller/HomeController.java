@@ -1,4 +1,4 @@
-package com.biz.memo01;
+package com.biz.memo01.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
