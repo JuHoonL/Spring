@@ -33,4 +33,32 @@ public class MemoService {
 		int ret  = memoMapper.insert(vo);
 		return ret;
 	}
+
+	public MemoVO findById(long id) {
+		
+		MemoVO vo = memoMapper.findById(id);
+		return vo;
+	}
+
+	public int delete(Long Id) {
+		// TODO Auto-generated method stub
+		
+		return memoMapper.delete(Id);
+	}
+
+	public void memo_write(MemoVO vo) {
+		/*
+		 vo에는 form에서 보내온 데이터가 담겨있다
+		 vo member변수 중에서 없는 값이 있다. (id값)
+		 
+		 새로 메모를 작성하기를 했을 경우 id값이 아마도 0일 것이다.
+		 메모를 수정하기로 했을 경우는 id값이 0 이외의 값일 것이다.
+		 */
+		if(vo.getId()>0) {
+			memoMapper.update(vo);
+		} else {
+			memoMapper.insert(vo);
+		}
+		
+	}
 }

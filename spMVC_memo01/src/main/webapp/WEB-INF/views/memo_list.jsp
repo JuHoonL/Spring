@@ -6,12 +6,24 @@
 <head>
 <%@ include file="/WEB-INF/include/include-head.jspf" %>
 <script>
-function memo_click() {
-	var memo_row = document.getElementsByClassName("memoRow")
-	var memo_id = memo_row[0].dataset.memoId
-	alert("선택한 메모의 ID는 " + memo_id + "입니다.")
-}
+/*
+ * script 내에서 $(function(){  }) 영역은 JQuery 영역임을 선언한다.
+ */
+$(function(){
+	$(".memoRow").click(function(){
+		var memo_id = $(this).attr("data-memo-id")
+		//alert("클릭한 메모의 PK : " + memo_id)
+		location.href="/memo01/memo_view?id=" + memo_id
+	})
+	
+})
 </script>
+<style>
+	td {
+		cursor: pointer;
+		
+	}
+</style>
 </head>
 <body>
 <%@ include file="/WEB-INF/include/include-header.jspf" %>
@@ -22,6 +34,7 @@ function memo_click() {
 			<th>NO</th>
 			<th>작성자</th>
 			<th>제목</th>
+			<th>작성일자</th>
 		</tr>
 		<c:choose>
 			<c:when test="${empty memoList}">
@@ -29,10 +42,11 @@ function memo_click() {
 			</c:when>
 			<c:otherwise>
 				<c:forEach var="memo" items="${memoList}" varStatus="row">
-					<tr class="w3-hover-light-gray memoRow" data-memo-id="${memo.id}" onclick="memo_click()">
-						<td>${row.index}, ${row.count}</td>
+					<tr class="w3-hover-gray memoRow" data-memo-id="${memo.id}" >
+						<td>${row.count}</td>
 						<td>${memo.m_auth}</td>
 						<td>${memo.m_subject}</td>
+						<td>${memo.m_date}</td>
 					</tr>	
 				</c:forEach>
 			</c:otherwise>
