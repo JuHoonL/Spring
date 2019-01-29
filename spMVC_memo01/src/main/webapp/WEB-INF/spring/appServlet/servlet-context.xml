@@ -32,6 +32,7 @@
 	시작이 빨리 되도록 선언을 변경 
 	-->
 	<context:component-scan base-package="com.biz.memo01.controller" />
+	<context:component-scan base-package="com.biz.memo01.service" />
 	
 	
 	
