@@ -1,4 +1,6 @@
 INDEX VERSION 1.131
+D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3786371116.index
+\spMVC_Memo02\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1106131430.index
 \spMVC004\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2391845382.index

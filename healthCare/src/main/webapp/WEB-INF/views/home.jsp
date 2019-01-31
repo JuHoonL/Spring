@@ -79,7 +79,7 @@
 	<a href="#" class="nav-home">홈</a>
 	<a href="#" class="nav-menu">메모쓰기</a>
 	<a href="#" class="nav-menu">로그인</a>
-	<a href="user_join" class="nav-menu">회원가입</a>
+	<a href="user_join" class="nav-menu" onclick="window.open('user_join', '회원가입','width=550, height=500'); return false">회원가입</a>
 </nav>
 
 <section>
