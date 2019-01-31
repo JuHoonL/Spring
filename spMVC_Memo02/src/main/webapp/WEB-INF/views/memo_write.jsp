@@ -1,25 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>메모장 보기</title>
-<link rel="stylesheet" href="/memo02/css/memo_write.css">
-
+<link rel="stylesheet" href=<c:url value="/css/memo_write.css" /> >
 </head>
 <body>
-<header>나의 메모장</header>
-	<nav>
-		<a href="home" class="nav-home">Home</a>
-		<a href="memo_write" class="nav-menu">메모작성</a>
-		<a href="#" class="nav-menu">로그인</a>
-		<a href="#" class="nav-menu">회원가입</a>
-		<a href="#" class="nav-menu">About</a>
-	</nav>
+<%@ include file="/WEB-INF/include/include-header.jspf" %>
 <section>
-	<form>
+	<form action=<c:url value="memo_write" /> method="POST">
 		<label for="m_auth" id="for_auth">작성자</label>
 		<input type="text" id="m_auth" name="m_auth" 
 		placeholder="작성자 이름을 입력하세요" /><br/>
@@ -32,8 +25,8 @@
 		placeholder="제목을 입력하세요" /><br/>
 		
 		<label for="m_text">메모</label>
-		<input type="text" id="m_text" name="m_text"
-		placeholder="메모 내용을 입력하세요" /><br/>
+		<textarea rows="15" id="m_text" name="m_text"
+		placeholder="메모 내용을 입력하세요" ></textarea><br/>
 		
 		<button>메모저장</button>
 	</form>

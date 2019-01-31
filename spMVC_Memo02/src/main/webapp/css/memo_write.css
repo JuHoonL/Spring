@@ -65,11 +65,12 @@
 		display : block;
 	}
 	
-	input {
-		width:100%;
+	input, textarea {
+		margin: 3px;
 		padding: 8px;
-		margin-top: 8px;
-		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		display: block;
+		width: 100%;
 	}
 	
 	#for_auth {
@@ -87,5 +88,13 @@
 		width: 100px;
 		height: 30px;
 		color: white;
+		padding: 0.5em;
+		border: none;
+		font-weight: bold;
+	}
+	
+	button:hover {
+		background-color: blue;
+		color: yellow;
 	}
 	

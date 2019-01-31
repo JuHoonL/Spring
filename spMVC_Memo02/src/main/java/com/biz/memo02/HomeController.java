@@ -41,10 +41,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value="memo_write", method=RequestMethod.GET)
-	public String memo_write() {
-		
-		return "memo_write";
-	}
+
 	
 }
