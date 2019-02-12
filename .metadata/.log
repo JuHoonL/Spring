@@ -2010,3 +2010,138 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://do
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:37:51.218
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NsbDHqsO => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.348
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.sSTXSlem
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.348
+!MESSAGE subscribing to classpath changes: sts4.classpath.sSTXSlem
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.348
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.348
+!MESSAGE subsribers = [sts4.classpath.sSTXSlem]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.348
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.348
+!MESSAGE project spMVC_Memo02 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project Health ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE Preparing classpath changed notification spMVC_Memo02
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project Health SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project HelloSpring ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project HelloSpring SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project Servers ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project Servers SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project healthCare ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project healthCare SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project healthCare01 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project healthCare01 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC001 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE classpath=49 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC001 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC002 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE executing callback sts4.classpath.sSTXSlem spMVC_Memo02 false 49
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC002 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC003 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC003 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC004 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC004 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC005 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC005 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC006 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC006 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC007 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC007 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC_Addr ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC_Addr SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC_memo01 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE project spMVC_memo01 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.364
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.sSTXSlem => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:44.631
+!MESSAGE executing callback sts4.classpath.sSTXSlem SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:51.538
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sSTXSlem
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:51.538
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.sSTXSlem
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:51.538
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-02-12 15:40:51.538
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sSTXSlem => OK
