@@ -65,6 +65,27 @@
 		font-weight: bold;
 	}
 	
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 90%;
+		display: table;
+		border: 1px solid #ccc;
+		margin: 5px auto;
+	}
+	
+	table tr {
+		border: 1px solid #ddd;
+	}
+	
+	table td, table th {
+		padding: 8px;
+		display: table-cell;
+		text-align: left;
+		vertical-align: center;
+		cursor: pointer;
+	}
+	
 	footer {
 		font-size: 20px;
 		text-align: center;

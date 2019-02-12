@@ -9,18 +9,19 @@
 <title>음식 선택</title>
 </head>
 <body>
+<header>음식검색</header>
 <nav>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
+<a href="#"></a>
 
 </nav>
 <section>
-<table>
-	<c:forEach var="KcalVO" items="${List}" varStatus="i">
-		<tr>
-			<td>${KcalVO.foodName}</td>
-			<c:if test="${i.count % 4 == 0}"></tr><tr></c:if>
-		</tr>
-	</c:forEach>
-</table>
+
 </section>
 
 </body>

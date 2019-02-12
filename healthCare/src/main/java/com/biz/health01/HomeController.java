@@ -2,6 +2,7 @@ package com.biz.health01;
 
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,8 +20,11 @@ import com.biz.health01.vo.UserVO;
 @Controller
 public class HomeController {
 	
+	@Autowired
 	PkcalService pkS;
+	@Autowired
 	KcalService kS;
+	@Autowired
 	UserService uS;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -30,7 +34,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "user_join", method = RequestMethod.GET)
-	public String user_join(Model model) {
+	public String user_join() {
 		
 		return "user_join";
 	}

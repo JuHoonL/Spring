@@ -1,4 +1,4 @@
-package com.biz.memo02;
+package com.biz.memo02.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -31,9 +31,9 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
+//		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "redirect:memo_home";
 	}
 	
 	@RequestMapping(value = "home", method = RequestMethod.GET)

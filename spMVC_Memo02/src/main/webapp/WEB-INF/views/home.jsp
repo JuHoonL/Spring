@@ -4,14 +4,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
-<title>메모장 보기</title>
-<link rel="stylesheet" href=<c:url value="/css/memo_main.css" /> >
+<%@ include file="/WEB-INF/include/include-head.jspf" %>
+
 </head>
 <body>
 <%@ include file="/WEB-INF/include/include-header.jspf" %>
 <section>
+	<c:if test="${BODY == 'LIST'}">
+		<%@ include file="/WEB-INF/views/body/memo_list.jspf" %>
+	</c:if>
+	<c:if test="${BODY == 'VIEW'}">
+		<%@ include file="/WEB-INF/views/body/memo_view.jspf" %>
+	</c:if>
+	<c:if test="${BODY == 'WRITE'}">
+		<%@ include file="/WEB-INF/views/body/memo_write.jspf" %>
+	</c:if>
+	<c:if test="${BODY == 'MEMBER_JOIN'}">
+		<%@ include file="/WEB-INF/views/body/member_write.jspf" %>
+	</c:if>
+	<c:if test="${BODY == 'MEMBER_VIEW'}">
+		<%@ include file="/WEB-INF/views/body/member_view.jspf" %>
+	</c:if>
+	<c:if test="${BODY == 'LIST'}">
+		<%@ include file="/WEB-INF/views/body/login-form.jspf" %>
+	</c:if>
+	
 </section>
 
 <footer><address>CopyRight &copy; juhoon12@nate.com</address></footer>

@@ -7,6 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/memo-context01.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/memo-context.xml</config>
 	</configs>
 	<autoconfigs>
