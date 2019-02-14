@@ -19,6 +19,8 @@ D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\32571721
 \spMVC_Memo\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1756988989.index
 \spMVC004\src\main\java
+D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1397676869.index
+\spMVC_Naver\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2919421517.index
 \spMVC004\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3324180297.index

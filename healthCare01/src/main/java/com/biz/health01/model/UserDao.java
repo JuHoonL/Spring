@@ -14,6 +14,9 @@ public interface UserDao {
 	@Select(health_Sql.USER_FINDBYID)
 	public UserVO findById(String id);
 	
+	@Select(health_Sql.USER_FINDBYUSERID)
+	public UserVO findByUserId(String USERId);
+	
 	@Select(health_Sql.USER_FINDBYNAME)
 	public UserVO findByName(String userName);
 	

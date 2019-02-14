@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +39,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "home2", method = RequestMethod.GET)
+	public String home02(Locale locale, Model model) {
+				
+		return "home02";
+	}
+	
 	@RequestMapping(value = "user_join", method = RequestMethod.GET)
 	public String user_join() {
 		
@@ -47,6 +55,14 @@ public class HomeController {
 	public String user_join(@ModelAttribute UserVO vo, Model model) {
 		
 		uS.user_Insert(vo);
+		
+		return "home";
+	}
+	
+	@RequestMapping(value="user_DB", method = RequestMethod.GET)
+	public String user_DB(@ModelAttribute UserVO vo, Model model) {
+		
+		
 		
 		return "user_DB";
 	}
@@ -75,10 +91,18 @@ public class HomeController {
 		
 		List<KcalVO> foodselectList = new ArrayList<KcalVO>();
 		
-		long id = 26; //나중에 음식vo에서 받아올 아이디값
 		
+		long id = 26; //나중에 음식vo에서 받아올 아이디값
 		KcalVO vo = fkS.food_FindById(id);
 		foodselectList.add(vo);
+		id = 32;
+		vo = fkS.food_FindById(id);
+		foodselectList.add(vo);
+		id = 58;
+		vo = fkS.food_FindById(id);
+		foodselectList.add(vo);
+
+		
 		int totalkcal = fkS.totalKcal(foodselectList);
 		int listSize = foodselectList.size();
 		
@@ -88,4 +112,29 @@ public class HomeController {
 
 		return "food_select";
 	}
+	
+	@RequestMapping(value="sports", method=RequestMethod.GET)
+	public String sports(@ModelAttribute UserVO vo, Model model, HttpSession session) {
+		
+//		UserVO uVO = uS.user_FindByUserId(session.getAttribute(userId));
+//		String Kal = foodselect에서 합해진 총 음식 칼로리 TOTALKCAL값 받아온거
+		
+		String Kg = "73";
+		String Kal = "300";
+		
+//		String Kal = fkS.overKcal(vo, kList);
+		
+		List<String> spoList = kS.Kcal(Kg, Kal);
+//		List<String> spoList = kS.Kcal(uVO.getWeight(), Kal);
+		
+		for(String s : spoList) {
+			System.out.println(s);
+		}
+		
+		model.addAttribute("SLIST",spoList);
+		
+		return "sports";
+	}
+	
+	
 }

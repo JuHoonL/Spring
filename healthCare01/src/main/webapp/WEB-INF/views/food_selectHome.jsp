@@ -10,16 +10,26 @@
 <style>
 	
 	section {
-		margin : 0px auto;
+		padding: 15px;
+	}
+	
+	#all-div {
+		width: 1500px;
+		margin: 1px auto;
 	}
 
-	#major-menu{
+	#major-menudiv{
 		float: left;
 		width : 20%;
 		height: 800px;
 		padding-left: 5px; 
 		border: 1px solid #ccc;
 		font-size:15pt;
+		text-decoration: none;
+		margin-left: 45px;
+		overflow: scroll; 
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 
 	article{
@@ -31,15 +41,58 @@
 	}
 
 	#minor-menu{
-		height: 700px;
-		
+		height: 600px;
+		overflow: scroll; 
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 
 	#calcekcal{
-		margin-top: -18px;
-		height: 100px;
+		height: 150px;
 		border-top: 1px solid #ccc;
+		color: green;
+		font-size: 13pt;
+		padding: 13px ;
 	}
+	
+	table {
+		width: 98%;
+		margin: 5px auto;
+	}
+	
+	td {
+		border: 1px solid #ccc;
+		text-align: center;
+		font-size: 12pt;
+		padding: 10px;
+	}
+	
+	#td-foodname {
+		color: black;
+		
+	}
+	
+	.selectfood {
+		display : inline-block;
+	}
+	
+	#Tkcal {
+		display: block;
+		float:right;
+		margin: 9px;
+		font-size: 20pt;
+	}
+			
+	#calce-button {
+		height:50px;
+		width: 450px;
+		margin: 1px auto;
+	}
+	
+	#button {
+		width: 80%;	
+	}
+	
 </style>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sb-admin.css" >
 </head>
@@ -47,30 +100,28 @@
 <header>
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/">헬스케어프로그램</a>
+      <a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/">헬스케어프로그램</a>
+     <div style ="text-align:right; width:100%;">
+    <label style = "color:white;">Id</label> <input type ="text" style = "text-align:right; ">
+    <label style = "color:white;">PassWord</label> <input type ="password" style = "text-align:right; ">
+     
     
-	<a class="btn btn-link btn-sm text-white ml-auto ml-md-0" 
-	href="#" >
+    
+    </div>
+	<a class="btn btn-link btn-sm text-white ml-auto " style = "width:100px;"
+	href="sports" >
 	로그인
     </a>
-	<a class="btn btn-link btn-sm text-white ml-auto ml-md-0" 
+	<a class="btn btn-link btn-sm text-white"  style = "width:100px;"
 	href="user_join" >
 	회원가입
     </a>
-     <a class="btn btn-link btn-sm text-white ml-auto ml-md-0" 
-	href="food_select" >
-	칼로리계산
-    </a>
-     <a class="btn btn-link btn-sm text-white ml-auto ml-md-0" 
-	href="#" >
-	다이어리
-    </a>
-   
 
-  </nav>
+    </nav>
 </header>
 <section>
-	<div id="major-menu">
+<div id="all-div">
+	<div id="major-menudiv">
 		<c:forEach items="${ALLFOODCATE}" var="FoodVO">
 			<a href="food_select01?cate_code=${FoodVO.cate_code}">${FoodVO.cate}</a><br/>
 		</c:forEach>
@@ -83,6 +134,7 @@
 			<p>칼로리계산
 		</div>
 	</article>
+</div>
 </section>
 </body>
 </html>

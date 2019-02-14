@@ -28,6 +28,13 @@ public class UserService {
 		return vo;
 	}
 	
+	public UserVO user_FindByUserId(String userId) {
+		
+		UserVO vo = userMapper.findByUserId(userId);
+		
+		return vo;
+	}
+	
 	public UserVO user_FindByName(String userName) {
 		
 		UserVO vo = userMapper.findByName(userName);
