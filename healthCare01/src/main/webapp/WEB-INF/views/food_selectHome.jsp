@@ -14,7 +14,7 @@
 	}
 	
 	#all-div {
-		width: 1500px;
+		width: 1600px;
 		margin: 1px auto;
 	}
 
@@ -93,31 +93,91 @@
 		width: 80%;	
 	}
 	
-</style>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/sb-admin.css" >
-</head>
+  	header {
+  		display: flex;
+  		background-color: #343a40;
+  		padding : 15px;
+  		width: 1600px;
+  		margin: 1px auto;
+  	}
+  	
+  	#hometitle {
+  		text-decoration: none;
+  		font-size: 25pt;
+  		color: white;
+  		
+  	}
+  	
+  	.login-title {
+  		margin-left: auto;
+  		display:flex;
+  		align-items: center;
+		justify-content: center;
+  	}
+  	
+  	label, input {
+  		width: 30%;
+  	}
+  	
+  	.flex-login-title {
+  		margin: 5px;
+		color: white;
+		text-decoration: none;
+  	}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  	$(function(){
+		 $("#login-button").click(function(){
+			 var userId = $("#userId").val();
+			 var password = $("#password").val();
+			 
+			 if(userId == "") {
+				 alert("Id를 입력해주세요")
+				 $("#userId").focus();
+				 return false;
+			 }
+			 if(password == "") {
+				 alert("비밀번호를 입력해주세요")
+				 $("#password").focus();
+				 return false;
+			 }
+			 
+			 $("form").submit();
+		 })
+		 
+		$(function(){
+			 if("${MSG}" == "true") {
+				 alert("로그인 되었습니다.")
+			 } else if("%{MSG}" == "false"){
+				 alert("아이디나 비밀번호를 다시 확인해 주세요.")
+			 }
+		 })
+		 
+	})
+  </script>
 <body>
 <header>
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-      <a class="navbar-brand mr-1" href="${pageContext.request.contextPath}/">헬스케어프로그램</a>
-     <div style ="text-align:right; width:100%;">
-    <label style = "color:white;">Id</label> <input type ="text" style = "text-align:right; ">
-    <label style = "color:white;">PassWord</label> <input type ="password" style = "text-align:right; ">
-     
-    
-    
-    </div>
-	<a class="btn btn-link btn-sm text-white ml-auto " style = "width:100px;"
-	href="sports" >
-	로그인
-    </a>
-	<a class="btn btn-link btn-sm text-white"  style = "width:100px;"
-	href="user_join" >
-	회원가입
-    </a>
-
-    </nav>
+	<a id="hometitle" href="${rootPath}/">헬스케어프로그램</a>
+	<c:if test="${empty LOGIN}">
+		<div class="login-title">
+		<form action="login" method="POST">
+			<label for="userId" class="flex-login-title">Id : </label> 
+			<input type ="text" id="userId" name="userId" />
+			
+	    	<label for="password" class="flex-login-title">PassWord : </label> 
+	    	<input type="password" id="password" name="password" />
+	    	<a href="#" id="login-button" class="flex-login-title">로그인</a>
+		</form>
+		<a href="${rootPath}/user_join" class="flex-login-title">회원가입</a>
+		</div>
+	</c:if>
+	<c:if test="${LOGIN ne null}">
+		<div class="login-title">
+			<a class="flex-login-title">${LOGIN.userName} 님 반갑습니다.</a>
+			<a href="${rootPath}/logout" class="flex-login-title">로그아웃</a>
+		</div>
+	</c:if>
 </header>
 <section>
 <div id="all-div">

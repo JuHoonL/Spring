@@ -5,6 +5,8 @@ D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\24978615
 \spMVC_Memo02\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3786371116.index
 \spMVC_Memo02\src\main\java
+D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4258333281.index
+\spMVC_Simple\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1106131430.index
 \spMVC004\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2391845382.index
@@ -13,14 +15,14 @@ D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\19560167
 \spMVC001\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1388707989.index
 \spMVC007\src\main\java
+D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1397676869.index
+\spMVC_Naver\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\996326160.index
 \spMVC_Memo02\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3257172117.index
 \spMVC_Memo\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1756988989.index
 \spMVC004\src\main\java
-D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1397676869.index
-\spMVC_Naver\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2919421517.index
 \spMVC004\src\main\java
 D:\bizwork\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3324180297.index

@@ -34,6 +34,9 @@
     <label style = "color:white;">Id</label> <input type ="text" style = "text-align:right; ">
     <label style = "color:white;">PassWord</label> <input type ="password" style = "text-align:right; ">
      
+    
+    
+    </div>
 	<a class="btn btn-link btn-sm text-white ml-auto " style = "width:100px;"
 	href="user_DB" >
 	로그인
@@ -42,9 +45,6 @@
 	href="user_join" >
 	회원가입
     </a>
-    
-    
-    </div>
 
     </nav>
 	<section>
@@ -67,19 +67,18 @@
 
       <div id="content-wrapper" class="content-wrapper-bg">
 
-        <div id="h4-h4" class="container-fluid">
+        
 
          
           <ol class="breadcrumb">
             <li class="breadcrumb-item active"><h4>간단합니다. 흔들리면 그것은 지방입니다.</h4></li>
             
           </ol>
-
-
+	
            <div class="row">
           
             <div class="card text-white bg-custom1 o-hidden h-100">
-              <div class="card-body" style="height:800px; width: 1900px; background-image: url('${pageContext.request.contextPath}/img/maini.png')">
+              <div class="card-body" style="height:700px; width: 1900px; background-image: url('${pageContext.request.contextPath}/img/maini.png')">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
@@ -108,7 +107,6 @@
      
       
       
- </div>
  </div>
 
 
