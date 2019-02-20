@@ -16,7 +16,7 @@ public class ProductVO {
 	private String p_ccode;
 	private String p_cname;
 	private String p_vat;
-	private String p_iprice;
-	private String p_oprice;
+	private int p_iprice;
+	private int p_oprice;
 	
 }

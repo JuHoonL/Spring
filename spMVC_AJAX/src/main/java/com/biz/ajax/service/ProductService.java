@@ -44,8 +44,8 @@ public class ProductService {
 				vo.setP_ccode(strRF[0]);
 				vo.setP_cname(strRF[1]);
 				vo.setP_vat(strRF[2]);
-				vo.setP_iprice(strRF[3]);
-				vo.setP_oprice(strRF[4]);
+				vo.setP_iprice(Integer.valueOf(strRF[3]));
+				vo.setP_oprice(Integer.valueOf(strRF[4]));
 				
 				pList.add(vo);
 			}

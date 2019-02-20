@@ -73,10 +73,25 @@
 	}
 	
 	#s-cart {
+		flex-flow: column wrap;
 		border: 3px solid black;
 		width: 29.83%;
 		overflow: auto;
 		height: 750px;
+	}
+	
+	#cart-div {
+		height: 60%;
+	}
+	
+	#button-div {
+		float: right;
+		height: 20%;
+	}
+	
+	#cart-total {
+		border-top: 1px soild black;
+		height: 18%;
 	}
 	
 	footer {
@@ -88,6 +103,49 @@
 	}
 	
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$(".p-tr").click(function(){
+			
+			let p_ccode = $(this).attr("data-p_ccode")
+			let p_cname= $(this).attr("data-p_cname")
+			let p_iprice= $(this).attr("data-p_iprice")
+			let p_oprice= $(this).attr("data-p_oprice")
+			
+			
+			alert(p_cname)
+			
+			let su = 2
+			
+			let p_osum = su * parseInt(p_oprice)
+			
+			let p_string = "<p>"
+						 + p_cname + "(" 
+						 + "<span class='osum'>" + p_osum + "</span>" 
+						 + ")" + "\n" + "</p>"
+			
+						 						 
+						 
+			let s_cart = $("#cart-div").html()
+			$("#cart-div").html(s_cart + p_string)
+		})
+		
+		$("#btn-total").click(function(){
+			
+			alert("")
+			
+			var osum = 0
+			
+			$(".osum").each(function(index,item) {
+				osum += parseInt($(item).text())
+			})
+			
+			$("#cart-total").text("총합계 = " + osum)
+			
+		})
+	})
+</script>
 </head>
 <body>
 <header>
@@ -113,7 +171,11 @@
 				</c:when>
 				<c:otherwise>
 					<c:forEach items="${PRODUCT}" var="vo" varStatus="i">
-						<tr>
+						<tr data-p_ccode="${vo.p_ccode}" 
+							data-p_cname="${vo.p_cname}"
+							data-p_iprice="${vo.p_iprice}"
+							data-p_oprice="${vo.p_oprice}"
+						class="p-tr">
 							<td class="table-data">${i.count}</td>
 							<td class="table-data">${vo.p_ccode}</td>
 							<td class="table-data">${vo.p_cname}</td>
@@ -130,6 +192,9 @@
 		</table>
 	</article>
 	<article id="s-cart">
+		<div id="cart-div"></div>
+		<div id="button-div"><button type="button" id="btn-total">합계</button></div>
+		<div id="cart-total"></div>
 	</article>
 </section>
 <footer><address>CopyRight &copy; juhoon12@nate.com</address></footer>
