@@ -1,0 +1,85 @@
+@charset "UTF-8";
+	
+	* {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+	
+	htme, body {
+		width: 100%;
+		height: 100%;
+	}
+	
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	header {
+		background: linear-gradient(to bottom, blue, black);
+		color: white;
+		flex: 0 0 auto;
+		padding: 1em;  /* 글자크기에 맞게 유동조절 */
+	}
+	
+	h2 {
+		color: inherit; /* 지정된 컬러 상속 */
+		text-align: center;
+	}
+	
+	#main-menu {
+		border: 1px soild #ccc;
+		background: linear-gradient(to bottom, lightgray, black);
+		color: white; 
+		font-size: 15pt;
+		margin-top: 2px;
+		display: flex;
+	}
+	
+	nav a/*.menu-home*/ {
+		display: inline-block;
+		color: white;
+		text-decoration: none;
+		flex: 0 0 auto;
+		padding: .3em; /* a tag에 padding을 주면 mouse hover에서 꽉 채워지게 나옴 */
+	}
+	
+	nav a:hover/*.menu-home:hover*/ {
+		background: linear-gradient(to bottom, white, silver);
+		color: black;
+	}
+	
+	section {
+		display: flex;
+		flex-flow: row wrap;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		flex: 0 1 auto;
+		height: 100%;
+	}
+	
+	#p-List {
+		margin-right: 3px;
+		border: 1px solid blue;
+		flex: 0 0 69.68%;
+	}
+	
+	td.table-data {
+		text-align: right;
+	}
+	
+	#s-cart {
+		margin-right: 3px;
+		border: 1px solid blue;
+		flex: 0 0 30%;
+	}
+	
+	footer {
+		background: linear-gradient(to bottom, blue, black);
+		text-align: center;
+		color: white;
+		padding: 8px;
+		flex: 0 1 30px;
+	}
+	
