@@ -7,7 +7,7 @@ public class DeptSQLBuilder {
 
 	public String getSelectSQL() {
 		
-		SQL sql = new SQL().SELECT("*").FROM("tbl_dept");
+		SQL sql = new SQL().SELECT("*").FROM("tbl_dept").ORDER_BY("d_code");
 		
 		return sql.toString();
 	}
@@ -20,9 +20,9 @@ public class DeptSQLBuilder {
 			
 			sql.INSERT_INTO("tbl_dept");
 			sql.INTO_COLUMNS("d_code");
-			sql.INTO_VALUES("#{d_code}");
-			sql.VALUES("d_name", "#{d_name}");
-			sql.VALUES("d_ceo", "#{d_ceo}");
+			sql.INTO_VALUES("#{d_code,jdbcType=VARCHAR}");
+			sql.VALUES("d_name", "#{d_name,jdbcType=NVARCHAR}");
+			sql.VALUES("d_ceo", "#{d_ceo,jdbcType=NVARCHAR}");
 		
 		return sql.toString();
 	}
@@ -31,8 +31,8 @@ public class DeptSQLBuilder {
 		
 		//SQLBuilder(Mybatis 3.대 버전에서 새로 도입된 SQL문 작성기 초기버전)
 		//1.7버전이하에서 컴파일 오류가능성 잇음
-		SQL sql = new SQL().UPDATE("tbl_dept").SET("d_code = #{d_code}").SET("d_name = #{d_name}")
-				.SET("d_ceo = #{d_ceo}").WHERE("d_code = #{d_code}");
+		SQL sql = new SQL().UPDATE("tbl_dept").SET("d_code = #{d_code,jdbcType=VARCHAR}").SET("d_name = #{d_name,jdbcType=NVARCHAR}")
+				.SET("d_ceo = #{d_ceo,jdbcType=NARCHAR}").WHERE("d_code = #{d_code,jdbcType=VARCHAR}");
 		
 		return sql.toString();
 	}
@@ -40,7 +40,7 @@ public class DeptSQLBuilder {
 	public String getDelete() {
 		
 		SQL sql = new SQL()
-				.DELETE_FROM("tbl_dept").WHERE("d_code = #{d_code}");
+				.DELETE_FROM("tbl_dept").WHERE("d_code = #{d_code,jdbcType=VARCHAR}");
 		
 		return sql.toString();
 	}

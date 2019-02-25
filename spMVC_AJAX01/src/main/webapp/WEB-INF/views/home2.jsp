@@ -27,7 +27,7 @@
 	}
 
 	header {
- 		background: linear-gradient(To bottom, blue, black);
+ 		background: linear-gradient(To bottom, #ccff66, #ccff66, #cc9900);
  		text-align: center;
  		color: white;
  		padding: 5px;
@@ -85,6 +85,9 @@
 		width: 100%;
 	}
 	
+	.table-th {
+		background-color: lightgray;	
+	}
 	
 	#div-div2 {
 		border: 2px solid black;
@@ -93,7 +96,7 @@
 	}
 	
 	footer {
-		background: linear-gradient(To bottom, blue, black);
+		background: linear-gradient(To bottom, #ccff00,black);
  		text-align: center;
  		color: white;
  		padding: 5px;
@@ -115,9 +118,9 @@
 			<div id="div-div1">
 			<table id="div-table">
 				<tr>
-					<th>회사코드</th>
-					<th>회사이름</th>
-					<th>대표자명</th>
+					<th class="table-th">회사코드</th>
+					<th class="table-th">회사이름</th>
+					<th class="table-th">대표자명</th>
 				</tr>
 				<c:forEach items="${LIST}" var="vo" varStatus="i">
 					<tr>

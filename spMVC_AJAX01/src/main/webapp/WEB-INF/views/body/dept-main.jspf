@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
+<script>
+$(function(){
+	//form의 submit action을 가로채기
+	//form에 입력된 데이트를 Ajax로 서버에 보낼려고 한다.
+	$("form").submit(function(event){
+		
+		//re event Default : submit의 기본 동작 수행금지
+		event.preventDefault()
+		let dsearch = $("#dsearch").val()
+		
+		//입력박스에 입력한 거래처명으로 조회를 실행한다.
+		$.ajax({
+			url: "${rootPath}/dsearch",
+			method:"POST",
+			data:{dsearch:dsearch},
+			success:function(result){
+				$("#main-list").html(result)
+			},
+			error:function(){
+				alert("서버와 통신 오류!!")
+			}
+		})
+		
+		//alert("submit 실행")
+	})	
+})
+</script>

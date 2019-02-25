@@ -23,18 +23,14 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
-
-		List<DeptVO> dList = ds.deptGetList();
-		
-		model.addAttribute("LIST",dList);
-		
+				
 		return "home";
 	}
 	
 	@RequestMapping(value = "home2", method = RequestMethod.GET)
 	public String home2(Model model) {
 		
-		List<DeptVO> dList = ds.deptGetList();
+		List<DeptVO> dList = ds.deptGetAllList();
 		
 		model.addAttribute("LIST",dList);
 		
