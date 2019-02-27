@@ -1,5 +1,8 @@
 package com.biz.member.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +28,15 @@ public class MemberService {
 		MemberVO vo = dao.findById(m_userid);
 		
 		return vo;
+	}
+
+	public List<MemberVO> loginCheck(String m_userid) {
+		// TODO Auto-generated method stub
+		
+		List<MemberVO> mList =  dao.loginCheck(m_userid);
+		
+		
+		return mList;
 	}
 	
 	

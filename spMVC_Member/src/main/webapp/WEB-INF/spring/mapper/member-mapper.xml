@@ -19,4 +19,8 @@
 	<delete id="delete" parameterType="memberVO">
 		DELETE FROM tbl_member WHERE m_userid = #{m_userid}
 	</delete>
+	
+	<select id="loginCheck" resultType="memberVO">
+		SELECT * FROM tbl_member WHERE m_userid = #{m_userid}
+	</select>
 </mapper>

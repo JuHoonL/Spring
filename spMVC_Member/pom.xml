@@ -40,6 +40,17 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+
+
+		<!-- 스프링 보안 프로젝트에서 제공하는 보안 툴(class) -->
+		<!-- 회원가입시 비밀번호부분을 암호화해서 저장 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>

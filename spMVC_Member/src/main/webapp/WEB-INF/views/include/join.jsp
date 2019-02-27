@@ -37,22 +37,26 @@ $(function(){
 	})
 	
 	// id를 입력하고 다른항목으로 넘어갔을 때 실행 될 함수
-	$("#m_userid").focusout(function(event){
+	$("#m_userid").blur(function(event){
 		
+		event.preventDefault()
 		
 		let userid = $("#m_userid").val()
 		
 		if(userid=="") {
-			alert("ID를 입력하세요")
+			//alert("ID를 입력하세요")
+			$(".userid-label").css("display","inline-block")
+			$("#userid-error").text("* 아이디를 입력하세요")
+			
 			return false;
 		}
-		
 		$.ajax({
 			url:"<c:url value='id-check' />",
 			method:"POST",
 			data: {m_userid:userid},
 			success:function(result){
-				alert(result)
+				$(".userid-label").css("display","inline-block")
+				$("#userid-error").html(result)
 			},
 			error:function(){
 				alert("오류 발생!!")
@@ -92,6 +96,17 @@ $(function(){
 		padding-left: 5px;
 	}
 	
+	.userid-label {
+		display: none;
+	}
+	
+	#userid-error {
+		color: red;
+		font-weight: bold;
+		width: 65%;
+		height: 30px;
+	}
+	
 	.in-box:hover {
 		background-color: #ddd;
 	}
@@ -110,7 +125,10 @@ $(function(){
 		<legend><h3>회원가입</h3></legend>
 		
 		<label for="m_userid">회원ID(email)</label>
-		<input type="email" class="in-box" required="required" id="m_userid" name="m_userid" placeholder="ID를 입력해주세요" /><br />
+		<input type="text" class="in-box" required="required" id="m_userid" name="m_userid" placeholder="ID를 입력해주세요" /><br />
+		
+		<label class="userid-label"></label>
+		<span id="userid-error" class="userid-label"></span><br />
 			
 		<label for="m_password">비밀번호</label>
 		<input type="password" class="in-box"  id="m_password" name="m_password" placeholder="비밀번호를 입력해주세요" /><br />

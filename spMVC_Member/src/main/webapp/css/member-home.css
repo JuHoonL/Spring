@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+	* {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+	
+	html{
+		height: 100%;
+	}
+	
+	body {
+		display: flex;
+		margin: 0;
+		flex-direction: column;
+		height: 100%;
+	}
+	
+	header {
+		width: 100%;
+		color: white;
+		background: linear-gradient(to bottom, purple, purple);
+		text-align: center;
+	}
+	
+	section {
+		height: 90%;
+	}
+	
+	#main-menu {
+		background-color: black;
+		width: 100%;
+		margin: 3px 0px;
+		height: 5%;
+		padding-top: 10.7px;
+	}
+	
+	.main-menu {
+		padding: 10px;
+		color: white;
+		text-decoration: none;
+	}
+	
+	.main-menu:hover {
+		background: linear-gradient(to bottom, white, silver);
+		color: black;
+	}
+	
+	#pre-list {
+		display: flex;
+		border: 0px solid black;
+		width: 100%;
+		height: 93.8%;
+	}
+	
+	footer {
+		border: 1px solid purple;
+		background: linear-gradient(to bottom, white, purple);
+		color: white;
+		text-align: center;
+	}
+	

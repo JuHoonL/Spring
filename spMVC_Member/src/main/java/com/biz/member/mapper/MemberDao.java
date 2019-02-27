@@ -12,4 +12,5 @@ public interface MemberDao {
 	public int insert(MemberVO vo);
 	public int update(MemberVO vo);
 	public int deletr(String m_userid);
+	public List<MemberVO> loginCheck(String m_userid);
 }
