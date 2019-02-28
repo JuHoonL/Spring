@@ -16,7 +16,7 @@
 	<h2>회원가입</h2>
 </header>
 <section>
-	<%@ include file="/WEB-INF/views/include/include-nav.jspf" %>
+	<%@ include file="/WEB-INF/views/include/include-nav2.jspf" %>
 	<article id="pre-list">
 		<c:if test="${BODY == 'JOIN-FORM'}" >
 			<%@ include file="/WEB-INF/views/include/join.jsp" %>
@@ -25,8 +25,12 @@
 			<%@ include file="/WEB-INF/views/include/login-form.jspf" %>
 		</c:if>
 		<c:if test="${empty BODY}">
-			<P>상품리스트 표시 영역
 		</c:if>
+		<p>${LOGIN.m_userid}<br/>
+		   ${LOGIN.m_name}<br/>
+		   ${LOGIN.m_tel}<br/>
+		   ${LOGIN.m_addr}<br/>
+		
 	</article>
 </section>
 <footer><address>CopyRight &copy; juhoon12@nate.com</address></footer>

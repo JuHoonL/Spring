@@ -22,9 +22,13 @@ $(function(){
 	})
 	
 	//컨트롤러에서 보낸 LOGIN변수안에 FAIL문자열이 담겨있으면 
-	if("${LOGIN}" == "FAIL") {
+	if("${LOGIN_MSG}" == "FAIL") {
 		$(".error-box").css("display","inline-block")
 		$("#error-msg").html("<b><font color=red> 로그인 실패!! </font></b>")
+	} 
+	if("${LOGIN_MSG}" == "ADMIN-CONFIRM-FAIL") {
+		$(".error-box").css("display","inline-block")
+		$("#error-msg").html("<b><font color=red>" + "관리자로 로그인하세요." + "</font></b>")
 	}
 	
 })
@@ -45,7 +49,7 @@ $(function(){
 	.width-90 {
 		display: inline-block;
 		width: 90%;
-		margin: 10px auto;
+		margin: 10px 0px 10px 45px;
 	}
 			
 	.in-box:hover {

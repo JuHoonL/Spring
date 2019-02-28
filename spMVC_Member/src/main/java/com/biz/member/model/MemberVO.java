@@ -21,4 +21,6 @@ public class MemberVO {
 	private String m_addr; 
 	private String m_photo;
 	private String m_photo_path;
+	
+	private String m_role;
 }

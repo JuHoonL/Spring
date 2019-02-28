@@ -65,15 +65,6 @@
 		<c:if test="${not empty LOGIN}">
 			<li><a href="javascript:void(0)" class="main-menu">${LOGIN.m_name}님 반갑습니다.</a></li>
 			<li><a href="<c:url value='/logout' />" class="main-menu">로그아웃</a></li>
-			<c:if test="${LOGIN.m_role == 'ADMIN'}">
-				<% //javascript:void(0) : a tag를 클릭했을 때 페이지 전환 금지 %>
-				<li class="drop-down"><a href="javascript:void(0)" class="main-menu btn-drop">관리자</a>
-					<div class="drop-content">
-						<a href="<c:url value='/admin/member' />" class="main-menu">회원 정보 보기</a>
-						<a href="#"  class="main-menu">시스템 정보 보기</a>
-					</div>
-				</li>
-			</c:if>
 			<c:if test="${LOGIN.m_role == 'USER'}">
 				<% //javascript:void(0) : a tag를 클릭했을 때 페이지 전환 금지 %>
 				<li class="drop-down">
@@ -81,6 +72,13 @@
 				</li>
 			</c:if>
 		</c:if>
+			<% //javascript:void(0) : a tag를 클릭했을 때 페이지 전환 금지 %>
+			<li class="drop-down"><a href="javascript:void(0)" class="main-menu btn-drop">관리자</a>
+				<div class="drop-content">
+					<a href="<c:url value='/admin/member' />" class="main-menu">회원 정보 보기</a>
+					<a href="#"  class="main-menu">시스템 정보 보기</a>
+				</div>
+			</li>
 		
 		
 	</ul>
