@@ -80,6 +80,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\bizwork\다른사람 프로젝트\HealthCare_v1.1"/>
 			<item value="D:\bizwork\다른사람 프로젝트\HealthCare_v1.0"/>
 			<item value="D:\bizwork\spring\healthCare01"/>
 		</list>
