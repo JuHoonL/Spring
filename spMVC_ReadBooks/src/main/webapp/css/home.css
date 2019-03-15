@@ -1,0 +1,103 @@
+@charset "UTF-8";
+	* {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+	
+	body {
+		width: 100%;
+		margin: 0px;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	#main-header {
+		display:flex;
+		flex-direction: column;
+		width: 100%;
+		height: 250px;
+	}
+	
+	#header-div {
+		text-align: center;
+		background-color: green;
+		height: 72%;
+		padding-top: 50px;
+	}
+	
+	#header-div a {
+		color: white;
+		font-size: 30pt;
+		text-decoration: none;
+	}
+	
+	#header-nav {
+		background-color: #3cbd20;
+		height: 28%;
+		padding-rigth: 30px;
+	}
+	
+	#header-nav a {
+		text-decoration: none;
+		float: right;
+		font-size: 13pt;
+		margin-left: 50px;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		margin-rigth: 30px;
+	}
+	
+	#main-section {
+		width: 100%;
+		height: 650px;
+		border: 1px solid #ccc;
+	}
+	
+	#div-table {
+		height: 600px;
+		overflow: auto;
+	}
+	
+	#div-insert {
+		width: 150px;
+		height: 30px;
+		margin: 0px auto;
+		
+	}
+	
+	#insert {
+		width: 100%;
+	}
+	
+	#main-table {
+		width: 100%;
+	}
+	
+	#main-table th {
+		background-color: #ccc;
+		border: 1px solid black;
+	}
+	
+	#main-table td {
+		text-align: center;
+	}
+	
+	#tr-List:nth-child(even) {
+		background-color: #ccc;
+	}
+	
+	#tr-List:nth-child(odd) {
+		background-color: #fff;
+	}
+	
+	#tr-List:hover {
+		background-color: #d8d8d8;
+	}
+	
+	footer {
+		background-color: #804040;
+		text-align: center;
+		color: white;
+		padding: 5px;
+	}
