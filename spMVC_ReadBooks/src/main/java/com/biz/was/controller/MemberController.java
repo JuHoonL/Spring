@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.biz.was.model.BookVO;
 import com.biz.was.model.MemberVO;
 import com.biz.was.service.BookService;
 import com.biz.was.service.MemberService;
@@ -29,6 +29,9 @@ public class MemberController {
 	
 	@Autowired
 	BookService bs;
+	
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
 	
 	@RequestMapping(value="join",method=RequestMethod.GET)
 	public String join(Model model) {
@@ -47,7 +50,13 @@ public class MemberController {
 
 	@RequestMapping(value="join",method=RequestMethod.POST)
 	public String join(@ModelAttribute MemberVO memberVO) {
+		
+		String password = passwordEncoder.encode(memberVO.getM_password());
+		
+		memberVO.setM_password(password);
+		
 		mService.insert(memberVO);
+		
 		return "redirect:/";
 	}
 	
@@ -92,7 +101,7 @@ public class MemberController {
 		log.debug(retVO.toString());
 		if(retVO.size() > 0) { 
 			for(MemberVO vo : retVO) {
-				if(vo.getM_password().equals(memberVO.getM_password())) {
+				if(passwordEncoder.matches(memberVO.getM_password(),vo.getM_password())) {
 					memberVO = vo;
 					session.setAttribute("LOGIN_INFO", memberVO);
 					return null;				

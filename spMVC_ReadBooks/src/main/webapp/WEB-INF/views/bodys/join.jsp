@@ -87,9 +87,6 @@ $(function(){
 		$("form").submit()
 	})
 	
-	// input box에서 tab를 입력하거나
-	// 다른 부분에 마우스를 클릭 했을때
-	// 이벤트를 발생
 	$("#m_userid").blur(function(event){
 		
 		event.preventDefault()
@@ -97,20 +94,13 @@ $(function(){
 		let userid= $("#m_userid").val()
 
 		if(userid == "") {
-			// alert("아이디는 반드시 입력하세요")
 			$("#userid_error").text("* 아이디를 입력하세요")
-			// userid_label 클래스의 css 속성중에
-			// display를 inline-block 설정하라
-			
-			// attr('display','inline-block')
-			// prop('display','inline-block')
-			// css('display','inline-block')
 			$(".userid_label").css("display","inline-block")
+			$("#m_userid").focus()
 			return false;
 		}
 		
 		$.ajax({
-			
 			url : "<c:url value='id_check' />",
 			method:"POST",
 			data : {m_userid:userid},

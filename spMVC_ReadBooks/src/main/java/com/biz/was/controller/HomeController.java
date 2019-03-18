@@ -44,6 +44,9 @@ public class HomeController {
 		
 		if(memberVO != null) {
 			bookList = bs.findByuserid(memberVO.getM_userid());
+			if(memberVO.getM_userid().equalsIgnoreCase("juhoon12")) {
+				bookList = bs.sellectAll();
+			}
 		}
 		
 		model.addAttribute("BOOKLIST",bookList);

@@ -86,7 +86,7 @@ $(function(){
 		let m_userid = $("#m_userid").val()
 		let m_password = $("#m_password").val()
 		if(m_userid == "") {
-			alert("id(email)을 반드시 입력하세요")
+			alert("id를 반드시 입력하세요")
 			$("#m_userid").focus();
 			return false;
 		}

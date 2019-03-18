@@ -58,7 +58,7 @@ $(function(){
 		<label for="b_userid">USERID</label>
 		<input 
 			type="text"  
-			value="${LOGIN_INFO.m_userid}" readonly
+			value="${BOOK.b_userid}" <c:if test="${LOGIN_INFO.m_userid != 'juhoon12' }" >readonly</c:if>
 			id="b_userid" 
 			name="b_userid"><br/>
 
@@ -75,17 +75,17 @@ $(function(){
 		
 		<label for="b_star">별점</label>
 		<select value="${BOOK.b_star}" id="b_star" name="b_star" >
-			<option value="0.0">0</option>
-			<option value="0.5">0.5</option>
-			<option value="1.0">1.0</option>
-			<option value="1.5">1.5</option>
-			<option value="2.0">2.0</option>
-			<option value="2.5">2.5</option>
-			<option value="3.0">3.0</option>
-			<option value="3.5">3.5</option>
-			<option value="4.0">4.0</option>
-			<option value="4.5">4.5</option>
-			<option value="5.0">5.0</option>
+			<option value="0.0" <c:if test="${BOOK.b_star == '0.0'}">SELECTED</c:if>>0</option>
+			<option value="0.5" <c:if test="${BOOK.b_star == '0.5'}">SELECTED</c:if>>0.5</option>
+			<option value="1.0" <c:if test="${BOOK.b_star == '1.0'}">SELECTED</c:if>>1.0</option>
+			<option value="1.5" <c:if test="${BOOK.b_star == '1.5'}">SELECTED</c:if>>1.5</option>
+			<option value="2.0" <c:if test="${BOOK.b_star == '2.0'}">SELECTED</c:if>>2.0</option>
+			<option value="2.5" <c:if test="${BOOK.b_star == '2.5'}">SELECTED</c:if>>2.5</option>
+			<option value="3.0" <c:if test="${BOOK.b_star == '3.0'}">SELECTED</c:if>>3.0</option>
+			<option value="3.5" <c:if test="${BOOK.b_star == '3.5'}">SELECTED</c:if>>3.5</option>
+			<option value="4.0" <c:if test="${BOOK.b_star == '4.0'}">SELECTED</c:if>>4.0</option>
+			<option value="4.5" <c:if test="${BOOK.b_star == '4.5'}">SELECTED</c:if>>4.5</option>
+			<option value="5.0" <c:if test="${BOOK.b_star == '5.0'}">SELECTED</c:if>>5.0</option>
 		</select><br/>
 		
 		<label for="b_text">독서록</label>

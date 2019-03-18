@@ -30,22 +30,26 @@
 		color: white;
 		font-size: 30pt;
 		text-decoration: none;
+		font-weight: bolder;
 	}
 	
 	#header-nav {
 		background-color: #3cbd20;
 		height: 28%;
-		padding-rigth: 30px;
 	}
 	
 	#header-nav a {
 		text-decoration: none;
 		float: right;
 		font-size: 13pt;
-		margin-left: 50px;
+		margin-left: 30px;
 		margin-top: 20px;
 		margin-bottom: 30px;
-		margin-rigth: 30px;
+		font-weight: bolder;
+	}
+	
+	#join, #logout {
+		margin-right: 30px;
 	}
 	
 	#main-section {
@@ -75,24 +79,34 @@
 	}
 	
 	#main-table th {
-		background-color: #ccc;
+		background-color: #8686ff;
 		border: 1px solid black;
+		color: white;
 	}
 	
 	#main-table td {
 		text-align: center;
 	}
 	
-	#tr-List:nth-child(even) {
+	.tr-List:nth-child(even) {
 		background-color: #ccc;
 	}
 	
-	#tr-List:nth-child(odd) {
+	.tr-List:nth-child(odd) {
 		background-color: #fff;
 	}
 	
-	#tr-List:hover {
+	.tr-List:hover {
 		background-color: #d8d8d8;
+		cursor: pointer;
+	}
+	
+	.tr-List1:nth-child(even) {
+		background-color: #ccc;
+	}
+	
+	.tr-List1:nth-child(odd) {
+		background-color: #fff;
 	}
 	
 	footer {

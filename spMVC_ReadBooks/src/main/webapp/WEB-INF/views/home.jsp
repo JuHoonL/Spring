@@ -42,7 +42,7 @@ $(function(){
 <body>
 <header id="main-header">
 	<div id="header-div">
-		<a href="<c:url value='/' />">나만의 독서록</a>
+		<a href="<c:url value='/' />">나 만 의  독 서 록</a>
 	</div>
 	<nav id="header-nav">
 		<c:if test="${empty LOGIN_INFO}">

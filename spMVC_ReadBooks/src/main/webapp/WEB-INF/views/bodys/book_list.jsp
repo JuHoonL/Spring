@@ -51,6 +51,7 @@ $(function(){
 			</c:when>
 			<c:otherwise>
 				<c:forEach items="${BOOKLIST}" var="vo" varStatus="i">
+					<c:if test="${not empty LOGIN_INFO}">
 					<tr class="tr-List" data-id="${vo.b_id}">
 						<td>${vo.b_userid}</td>
 						<td>${vo.b_isbn}</td>
@@ -58,9 +59,17 @@ $(function(){
 						<td>${vo.b_date}</td>
 						<td>${vo.b_star}</td>
 					</tr>
+					</c:if>
+					<c:if test="${empty LOGIN_INFO}">
+					<tr class="tr-List1" data-id="${vo.b_id}">
+						<td>${vo.b_userid}</td>
+						<td>${vo.b_isbn}</td>
+						<td>${vo.b_title}</td>
+						<td>${vo.b_date}</td>
+						<td>${vo.b_star}</td>
+					</tr>
+					</c:if>
 				</c:forEach>
-				<c:if test="${not empty LOGIN_INFO}">
-				</c:if>
 			</c:otherwise>
 		</c:choose>
 	</table>
