@@ -19,5 +19,6 @@ public class BoardVO {
     private String b_time;
     private String b_subject;
     private String b_content;
+    private String b_image;
     private long b_hit;
 }

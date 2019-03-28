@@ -15,12 +15,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.biz.file.model.BoardVO;
 import com.biz.file.model.MemberVO;
 import com.biz.file.service.BBSService;
+import com.biz.file.service.FileUpService;
+import com.biz.file.service.PageService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,6 +37,12 @@ public class BBSController {
 
 	@Autowired
 	BBSService bService;
+	
+	@Autowired
+	FileUpService fus;
+	
+	@Autowired
+	PageService pService;
 	
 	@ModelAttribute("boardVO")
 	public BoardVO newboardVO() {
@@ -46,6 +57,8 @@ public class BBSController {
 		int lengthP1 = bbsList.size() + 1;
 		
 		log.debug(""+lengthP1);
+		
+		bbsList = pService.pageList(1, 10);
 		
 		model.addAttribute("LENGTH_PLUS1", lengthP1);
 		
@@ -62,6 +75,84 @@ public class BBSController {
 	
 	@RequestMapping(value="/write",method=RequestMethod.GET)
 	public String bbs_write(@ModelAttribute("boardVO") BoardVO boardVO, Model model, SessionStatus Ssession, HttpSession session) {
+		
+		if(boardVO.getB_subject() != null) {
+			Ssession.setComplete();
+		}
+		
+		MemberVO memberVO = (MemberVO)session.getAttribute("LOGIN_INFO");
+		
+		if(memberVO == null) {
+			model.addAttribute("LOGIN_MSG","LOGIN PLZ");
+			return "redirect:/login";
+		}
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
+		
+		Date d = new Date();
+		
+		String today = sdf.format(d);
+		
+		String time = sdf1.format(d);
+
+		boardVO.setB_date(today);
+		boardVO.setB_time(time);
+		boardVO.setB_userid(memberVO.getM_userid());
+		
+		model.addAttribute("BODY","BBS_WRITE");
+		
+		return "home";
+	}
+	
+	@RequestMapping(value="/tag",method=RequestMethod.GET)
+	public String bbs_tag(@ModelAttribute("boardVO") BoardVO boardVO, Model model, SessionStatus Ssession, HttpSession session) {
+		
+		MemberVO memberVO = (MemberVO)session.getAttribute("LOGIN_INFO");
+		
+		if(memberVO != null) {
+			boardVO.setB_userid(memberVO.getM_userid());
+		} else {
+			boardVO.setB_userid("chunhyang@naver.com");
+		}
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
+		
+		Date d = new Date();
+		
+		String today = sdf.format(d);
+		
+		String time = sdf1.format(d);
+
+		boardVO.setB_date(today);
+		boardVO.setB_time(time);
+		
+		model.addAttribute("BODY","BBS_TAG_WRITE");
+		model.addAttribute("bbsVO",boardVO);
+		
+		return "home";
+	}
+	
+	@RequestMapping(value="/write_tag",method=RequestMethod.POST)
+	public String bbs_write_tag(@ModelAttribute("boardVO") BoardVO boardVO, MultipartFile b_file) {
+		
+		if(!b_file.isEmpty()){
+			
+			String saveFile = fus.upload(b_file);
+			boardVO.setB_image(saveFile);
+			
+		}
+		
+		bService.insert(boardVO);
+		
+		return "redirect:/bbs/";
+	}
+	
+	@RequestMapping(value="/drag",method=RequestMethod.GET)
+	public String bbs_drag(@ModelAttribute("boardVO") BoardVO boardVO, Model model, SessionStatus Ssession, HttpSession session) {
 		
 		if(boardVO.getB_subject() != null) {
 			Ssession.setComplete();
@@ -157,5 +248,18 @@ public class BBSController {
 		bService.delete(id);
 		
 		return "redirect:/bbs/";	
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/bbs_files",method=RequestMethod.POST)
+	public List<String> files(MultipartHttpServletRequest files) {
+		
+		List<String> fileNames = fus.uploads(files);
+		
+		for(String file : fileNames) {
+			log.debug("파일이름 : " + file );
+		}
+		
+		return fileNames;
 	}
 }

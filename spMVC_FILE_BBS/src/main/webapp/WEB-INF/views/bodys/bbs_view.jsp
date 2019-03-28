@@ -40,6 +40,7 @@ $(function(){
 	<p>작성일자 : ${BBS.b_date}</p>
 	<p>작성시간 : ${BBS.b_time}</p>
 	<p>내    용 : ${BBS.b_content}</p>
+	<p><img src="${pageContext.request.contextPath}/files/${BBS.b_image}">
 </article>
 <c:if test="${BBS.b_userid == LOGIN_INFO.m_userid}">
 	<div class="bbs_box">

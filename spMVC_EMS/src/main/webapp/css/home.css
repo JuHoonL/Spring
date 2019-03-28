@@ -1,0 +1,111 @@
+@charset "UTF-8";
+	* {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+	
+	body {
+		margin: 0px;
+		height: 935px;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	#home-header {
+		text-align: center;
+		background-color: blue;
+	}
+	
+	#home-header-p {
+		font-size: 30pt;
+		font-weight: bold;
+	}
+	
+	#home-section {
+		height: 770px;
+		display: flex;
+		flex-direction: row;
+	}
+	
+	#home-nav {
+		background-color: lightblue;
+		flex: 2;
+		text-align: center;
+		padding-top: 30px;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	#home-nav a {
+		text-decoration: none;
+		font-weight: bolder;
+		margin-top: 30px;
+		font-size: 12pt;
+	}
+	
+	#body {
+		flex: 9;
+	}
+	
+	#div-table {
+		height: 720px;
+		overflow: auto;
+	}
+	
+	#div-insert {
+		width: 150px;
+		height: 30px;
+		margin: 0px auto;
+		margin-top: 10px;
+		
+	}
+	
+	#insert {
+		width: 100%;
+	}
+	
+	#main-table {
+		width: 100%;
+	}
+	
+	#main-table th {
+		background-color: #8686ff;
+		border: 1px solid black;
+		color: white;
+	}
+	
+	#main-table td {
+		text-align: center;
+	}
+	
+	.tr-List:nth-child(even) {
+		background-color: #ccc;
+	}
+	
+	.tr-List:nth-child(odd) {
+		background-color: #fff;
+	}
+	
+	.tr-List:hover {
+		background-color: #d8d8d8;
+		cursor: pointer;
+	}
+	
+	.tr-List1:nth-child(even) {
+		background-color: #ccc;
+	}
+	
+	.tr-List1:nth-child(odd) {
+		background-color: #fff;
+	}
+	
+	#home-footer {
+		background-color: red;
+		text-align: center;
+		color: white;
+	}
+	
+	#home-footer address {
+		height: 30px;
+	}

@@ -66,12 +66,18 @@
 	</c:choose>
 </table>
 <hr />
-<button id="btn-write">게시글쓰기</button>
+<button id="btn-drag">글쓰기(drag)</button>
+<button id="btn-tag">글쓰기(tag)</button>
 <script>
 $(function(){
-	$("#btn-write").click(function(){
+	$("#btn-drag").click(function(){
 		//location.href="<c:url value='/bbs/write' />"
-		location.replace("<c:url value='/bbs/write' /> ")
+		location.replace("<c:url value='/bbs/drag' /> ")
+	})
+	
+	$("#btn-tag").click(function(){
+		//location.href="<c:url value='/bbs/write' />"
+		location.replace("<c:url value='/bbs/tag' /> ")
 	})
 	
 	$(".bbs_row").click(function(){

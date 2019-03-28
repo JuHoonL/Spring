@@ -12,7 +12,8 @@ public class BoardSQL {
 				.VALUES("b_time","#{b_time}")
 				.VALUES("b_subject","#{b_subject}")
 				.VALUES("b_content","#{b_content}")
-				.VALUES("b_hit","#{b_hit}");
+				.VALUES("b_hit","#{b_hit}")
+				.VALUES("b_image","#{b_image}");
 		
 		return sql.toString();
 				
@@ -26,6 +27,7 @@ public class BoardSQL {
 				.SET("b_subject=#{b_subject}")
 				.SET("b_content=#{b_content}")
 				.SET("b_hit=#{b_hit}")
+				.SET("b_image=#{b_image}")
 				.WHERE("id=#{id}");
 		
 		return sql.toString();

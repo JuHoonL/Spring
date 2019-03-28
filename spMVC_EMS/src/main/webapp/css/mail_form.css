@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@charset "UTF-8";
+
+#form-section {
+	
+	padding: 50px auto;
+}
+
+#form-section form {
+	width: 80%;
+	margin: 30px auto;
+	margin-top: 50px;
+}
+
+label {
+	
+	display: block;
+	width:100px;
+	float:left;
+	
+	font-weight: bold;
+	color : #009688;
+	font-size: 11pt;
+
+	padding:8px;
+	text-align: right;
+
+	
+}
+
+input, select , textarea {
+
+	display: inline-block;
+	width:85%;
+	
+	margin:3px;
+	padding:8px;
+	border : 1px solid #ccc;
+}
+
+#img-container {
+	display: flex;
+}
+	
+#images {
+	flex: 0 1 auto;
+	margin: 5px auto;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		
+	border: 1px solid blue;
+}
+
+button {
+	margin-bottom: 10px;
+	width:120px;
+	background: blue;
+	color:white;
+	font-weight: bold;
+	padding:0.5em;
+	border: none;
+}
+
+button:hover {
+	background-color: green;
+	color:yellow;
+}
+
+
+
