@@ -10,20 +10,34 @@
 		margin-top: 20px;
 	}
 	
-	#btn-update {
-		width: 70px;
+	#btn-insert {
+		width: 150px;
 		height: 30px;
 	}
 	
-	#btn-delete {
-		width: 70px;
-		height: 30px;
-	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-	
+	$("#btn-send").click(function(){
+		let form = $("form").serialize()
+		
+		alert(form)
+		
+		$.ajax ({
+			url:"<c:url value='/e_send' />",
+			method:"POST",
+			dataType:"JSON",
+			data:form,
+			success:function(result){
+				alert(result)
+				location.replace("<c:url value='/' />")
+			},
+			error:function(){
+				alert("메일전송실패")
+			}
+		})
+	})
 })
 	
 </script>
@@ -39,9 +53,7 @@ $(function(){
 			name="from_email"><br/>
 
 		<label for="to_email">받는email</label>
-		<input 
-			type="text"  
-			value="${EMAIL.to_email}" id="to_email" name="to_email"><br/>
+		<input type="text" id="to_email" name="to_email"><br/>
 		
 		<label for="s_date">발송일자</label>
 		<input value="${EMAIL.s_date}" type="date" <c:if test="${LOGIN_INFO.m_userid != 'juhoon12' }" >readonly</c:if>
@@ -52,19 +64,13 @@ $(function(){
 		id="s_time" name="s_time"><br/>
 		
 		<label for="s_subject">메일제목</label>
-		<input value="${EMAIL.s_subject}" type="text" id="s_subject" name="s_subject"><br/>
+		<input type="text" id="s_subject" name="s_subject"><br/>
 		
 		<label for="s_content">메일내용</label>
-		<input value="${EMAIL.s_content}" type="text" id="s_content" name="s_content"><br/>
-		
-		<label for="s_file1">첨부파일1</label>
-		<input value="${EMAIL.s_file1}" type="file" id="s_file1" name="file1"><br/>
-		
-		<label for="s_file2">첨부파일2</label>
-		<input value="${EMAIL.s_file2}" type="file" id="s_file2" name="file2"><br/>
+		<textarea type="text" id="s_content" name="s_content" cols="5"></textarea><br/>
 		
 		<hr />
 		<label></label>
-		<button type="submit" id="btn-insert">입력</button>
+		<button type="submit" id="btn-insert">메일 보내기</button>
 	</form>
 </section>

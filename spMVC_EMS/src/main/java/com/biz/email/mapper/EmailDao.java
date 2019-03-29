@@ -17,8 +17,11 @@ public interface EmailDao {
 	@Select(EmailSQL.FINDBYID)
 	public EmailVO findByid(long id);
 	
-	@Select(EmailSQL.FINDBYUSERID)
-	public List<EmailVO> findByUserid(String to_email);
+	@Select(EmailSQL.FINDBYFROMUSERID)
+	public List<EmailVO> findByFROMUserid(String from_email);
+	
+	@Select(EmailSQL.FINDBYTOUSERID)
+	public List<EmailVO> findByTOUserid(String to_email);
 	
 	@Insert(EmailSQL.INSERT)
 	public int insert(EmailVO emailVO);

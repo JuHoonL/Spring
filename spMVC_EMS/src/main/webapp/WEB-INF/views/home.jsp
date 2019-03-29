@@ -11,20 +11,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(function(){
-/*	$("home-nav a").click(function(){
+	$(".messages").click(function(){
 		let id = $(this).attr("id")
-		alert(id)
-		$.ajax({
-			url : "<c:url value='/' />" + id,
-			method:"GET",
-			success:function(result){
-				$("#body").html(result)
-			},
-			error:function() {
-				location.href="<c:url value='/' />"
-			}
-		})
-	})*/
+		
+		location.href="<c:url value='/m_request?m_id=' />" + id
+	})
 })
 </script>
 </head>
@@ -35,8 +26,9 @@ $(function(){
 <section id="home-section">
 <nav id="home-nav">
 	<c:if test="${not empty LOGIN_INFO}">
-		<a href="javascript:void(0)" id="m_send">메세지보내기</a>
-		<a href="<c:url value='m_request' />" id="m_request">받은메세지함</a>
+		<a href="<c:url value='e_send' />" id="e_send">메세지보내기</a>
+		<a href="javascript:void(0)" id="send-message" class="messages">보낸메세지함</a>
+		<a href="javascript:void(0)" id="request-message" class="messages">받은메세지함</a>
 	</c:if>
 	<c:if test="${empty LOGIN_INFO}">
 		<a href="<c:url value='login1' />" id="login">로그인</a>
@@ -45,7 +37,7 @@ $(function(){
 	<c:if test="${not empty LOGIN_INFO}">
 		<a href="<c:url value='logout' />" id="logout">로그아웃</a>
 	</c:if>
-	<a href="javascript:void(0)" id="m-notice">공지사항</a>
+	<a href="#" id="m-notice">공지사항</a>
 </nav>
 <article id="body">
 	<c:if test="${BODY == 'JOIN'}">
@@ -58,10 +50,13 @@ $(function(){
 		<%@ include file="/WEB-INF/views/bodys/email_list.jsp" %>
 	</c:if>
 	<c:if test="${BODY == 'INSERT'}">
-		<%@ include file="/WEB-INF/views/bodys/mail_pop_form.jsp" %>
+		<%@ include file="/WEB-INF/views/bodys/etc/mail_pop_form.jsp" %>
 	</c:if>
 	<c:if test="${BODY == 'UPDATE_DELETE'}">
-		<%@ include file="/WEB-INF/views/bodys/mail_form.jsp" %>
+		<%@ include file="/WEB-INF/views/bodys/etc/mail_form.jsp" %>
+	</c:if>
+	<c:if test="${BODY == 'SAVE'}">
+		<%@ include file="/WEB-INF/views/bodys/mail_save_form.jsp" %>
 	</c:if>
 </article>
 </section>

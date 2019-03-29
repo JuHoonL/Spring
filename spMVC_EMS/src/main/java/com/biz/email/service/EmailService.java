@@ -22,6 +22,9 @@ public class EmailService {
 	EmailDao emailmapper;
 	
 	@Autowired
+	EmailService eService;
+	
+	@Autowired
 	ServletContext context;
 	
 	public List<EmailVO> sellectAll() {
@@ -48,9 +51,14 @@ public class EmailService {
 		return emailmapper.insert(emailVO);
 	}
 
-	public List<EmailVO> findByUserid(String m_mailaddress) {
+	public List<EmailVO> findByFROMUserid(String m_mailaddress) {
 		
-		return emailmapper.findByUserid(m_mailaddress);
+		return emailmapper.findByFROMUserid(m_mailaddress);
+	}
+	
+	public List<EmailVO> findByTOUserid(String m_mailaddress) {
+		
+		return emailmapper.findByTOUserid(m_mailaddress);
 	}
 	
 	public String upload(MultipartFile file) {
@@ -94,6 +102,25 @@ public class EmailService {
 		
 		return fileNames;
 		
+	}
+
+	public void file_delete(String id, String oneNtwo) {
+		
+		EmailVO vo = emailmapper.findByid(Long.valueOf(id));
+		
+		if(oneNtwo.equalsIgnoreCase("one")) vo.setS_file1(null);
+		if(oneNtwo.equalsIgnoreCase("two")) vo.setS_file2(null);
+		
+		emailmapper.update(vo);
+	}
+	
+	public void folder_file_delete(String fileName) {
+		
+		String realPath = context.getRealPath("/files/");
+		
+		File dfile = new File(realPath,fileName);
+		
+		dfile.delete();
 	}
 
 }
