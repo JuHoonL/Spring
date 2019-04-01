@@ -54,7 +54,7 @@
 			<c:forEach items="${BBS_LIST}" var="BBS" varStatus="i">
 			<c:set var="totalcount" value="${LENGTH_PLUS1}" />
 				<tr class="bbs_row" data-id="${BBS.id}">
-					<td>${i.count}</td>
+					<td>${totalcount - ((paginationInfo.currentPageNo-1) * paginationInfo.recordCountPerPage + i.count) }</td>
 					<td>${BBS.b_subject}</td>
 					<td>${BBS.b_userid}</td>
 					<td>${BBS.b_date}</td>
