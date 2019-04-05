@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biz.bbs.mapper.BBsDao">
+	<select id="selectAll" resultType="bbsVO">
+		SELECT * FROM tbl_board
+	</select>
+	<select id="pageSelect" resultType="bbsVO">
+		SELECT M.* FROM (SELECT ROW_NUMBER() OVER (ORDER BY B_DATE DESC, B_TIME DESC) R, id, B_USERID, B_DATE, B_TIME, B_SUBJECT, B_CONTENT, B_HIT, B_IMAGE FROM tbl_board) M WHERE M.R BETWEEN #{start} AND #{end}
+	</select>
+	<select id="findById" resultType="bbsVO">
+		SELECT * FROM tbl_board WHERE id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="bbsVO">
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+			SELECT ROUND(DBMS_RANDOM.VALUE(0,9999999999),0) FROM DUAL
+		</selectKey>
+		INSERT INTO tbl_board VALUES(#{id}, #{b_userid}, #{b_date}, #{b_time}, #{b_subject}, #{b_content}, #{b_image}, #{b_hit})
+	</insert>
+	
+	<update id="update" parameterType="bbsVO">
+		UPDATE tbl_board SET b_userid=#{b_userid}, b_date=#{b_date}, b_time=#{b_time}, b_subject=#{b_subject}, b_content=#{b_content}, b_image=#{b_image}, b_hit=#{b_hit} 
+		WHERE id = #{id} 
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM tbl_board WHERE id = #{id}
+	</delete>
+</mapper>
+

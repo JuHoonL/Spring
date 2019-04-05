@@ -1,0 +1,85 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <c:set var="rootPath" value="${pageContext.request.contextPath}" />
+    <link href="${rootPath}/css/list.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+<script>
+$(function(){
+	$(".btn-update").click(function(){
+		let io_id = $(this).attr("data-id")
+		
+		location.href="<c:url value='/iolist/update?io_id=' />" + io_id
+	})
+	
+	$(".btn-delete").click(function(){
+		let io_id = $(this).attr("data-id")
+		alert(io_id)
+		if(!confirm("삭제할까요?")){
+			return false
+		}
+		location.replace("<c:url value='/iolist/delete?io_id=" + io_id + "' />")
+	})
+})
+</script> 
+<c:if test="${not empty LOGIN_INFO}">
+<a href="<c:url value='/iolist/write' />" id="insert-button">매입매출정보 등록</a>
+</c:if>
+<hr />
+<table>
+<tr id="tr-headline">
+	<th>NO.</th>
+	<th>거래일자</th>
+	<th>상품코드</th>
+	<th>거래처코드</th>
+	<th>매입/매출</th>
+	<th>수량</th>
+	<th>과세여부</th>
+	<th>단가</th>
+	<th>공급대가</th>
+	<th>합계</th>
+	<th></th>
+</tr>
+<tr>
+	<c:choose>
+		<c:when test="${empty LIST}">
+			<td colspan=9>매입매출자료가 없습니다.</td>
+		</c:when>
+		<c:otherwise>
+			<c:forEach var="list" items="${LIST}" varStatus="i">
+				<tr class="list-tr" data-id="${list.io_id}">
+					<td>${i.count}</td>
+					<td>${list.io_date}:${list.io_time}</td>
+					<td>${list.p_name}(${list.io_pcode})</td>
+					<td>${list.d_name}(${list.io_dcode})</td>
+					<c:if test="${list.io_inout == '1'}">
+					<td>매입</td>
+					</c:if>
+					<c:if test="${list.io_inout == '2'}">
+					<td>매출</td>
+					</c:if>
+					<td>${list.io_quan}</td>
+					<c:if test="${list.io_tax == '1'}">
+					<td>과세</td>
+					</c:if>
+					<c:if test="${list.io_tax == '0'}">
+					<td>면세</td>
+					</c:if>
+					<td>${list.io_price}</td>
+					<td>${list.io_total}</td>
+					<td>${list.io_tax_total}</td>
+					<c:if test="${not empty LOGIN_INFO}">
+					<td class="upNdel">
+						<button type="button" class="btn-update" data-id="${list.io_id}">수정</button>
+						<c:if test="${LOGIN_INFO == 'juhoon12@nate.com'}">
+						<button type="button" class="btn-delete" data-id="${list.io_id}">삭제</button>
+						</c:if>
+					</td>
+					</c:if>
+				</tr>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
+</table>
+<hr />
+
