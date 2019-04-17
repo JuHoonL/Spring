@@ -36,12 +36,17 @@ public class HomeControllerTest {
 	
 	@Test
 	public void testWriteGET() throws Exception {
-		mockMvc.perform(get("/write")).andExpect(status().isOk()).andDo(print());
+		mockMvc.perform(get("/write")).andExpect(status().isMethodNotAllowed()).andDo(print());
+	}
+	
+	@Test
+	public void testUpdateGET() throws Exception {
+		mockMvc.perform(get("/update")).andExpect(status().isOk()).andDo(print());
 	}
 	
 	@Test
 	public void testWritePOST() throws Exception {
-		mockMvc.perform(post("/write")).andExpect(status().isOk()).andDo(print());
+		mockMvc.perform(post("/write")).andExpect(status().isBadRequest()).andDo(print());
 	}
 	
 	@Test

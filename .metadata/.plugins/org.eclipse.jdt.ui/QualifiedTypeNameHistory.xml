@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.commons.dbcp2.BasicDataSource"/>
-<fullyQualifiedTypeName name="oracle.jdbc.driver.OracleDriver"/>
-<fullyQualifiedTypeName name="oracle.jdbc.OracleDriver"/>
-<fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionFactoryBean"/>
-<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DataSourceTransactionManager"/>
-<fullyQualifiedTypeName name="com.biz.file.config.MybatisConfig"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.annotations.UpdateProvider"/>
 <fullyQualifiedTypeName name="org.springframework.web.filter.CharacterEncodingFilter"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
 <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartResolver"/>
@@ -25,7 +18,6 @@
 <fullyQualifiedTypeName name="javax.validation.Valid"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartHttpServletRequest"/>
 <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
@@ -56,8 +48,16 @@
 <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
 <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
 <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+<fullyQualifiedTypeName name="org.springframework.test.web.servlet.MockMvcBuilder"/>
+<fullyQualifiedTypeName name="org.mockito.MockitoAnnotations"/>
 <fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner"/>
 <fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
+<fullyQualifiedTypeName name="org.springframework.web.context.WebApplicationContext"/>
 <fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="org.springframework.test.web.servlet.setup.MockMvcBuilders"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.web.WebAppConfiguration"/>
+<fullyQualifiedTypeName name="com.biz.memo06.controller.ContextTestController"/>
+<fullyQualifiedTypeName name="org.mockito.Mock"/>
 </qualifiedTypeNameHistroy>

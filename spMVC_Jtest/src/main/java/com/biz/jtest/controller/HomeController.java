@@ -45,4 +45,12 @@ public class HomeController {
 		return "home";
 	}
 	
+//	@RequestMapping(value="update", method=RequestMethod.GET)
+//	public String update(Model model) {
+//		
+//		model.addAttribute("STRING","str");
+//		
+//		return "home";
+//	}
+	
 }
