@@ -1,0 +1,40 @@
+@charset "UTF-8";
+	table {
+		margin: 0px auto;
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+		border: 1px solid #ccc;
+	}
+	
+	tr {
+		border-bottom: 1px solid #ddd;
+	}
+	
+	tr:nth-child(odd) {
+		background-color: #fff;
+	}
+	
+	tr:nth-child(even) {
+		background-color: #f1f1f1;
+	}
+	
+	tr:hover {
+		background-color: #ccc;
+	}
+	
+	td, th {
+		text-align: center;
+		padding: 8px 8px;
+		vertical-align: top;
+		white-space: nowrap; /* table내용 무조건 한줄안에 표시 */
+	}
+	
+	td:first-child, th:first-child {
+		padding-left: 16px;
+	}
+	
+	#empty-tr {
+		text-align: center;
+		font-weight: bold;
+	}
